@@ -14,6 +14,7 @@ import java.time.temporal.ChronoUnit
 object InstantSample extends App {
   val epoch = Instant.EPOCH
   val epochInc = epoch.plus(2, HOURS)
+  val now = Instant.now()
 
   println(epochInc)
   if (epochInc.isAfter(epoch)) println(s"$epochInc is really after $epoch")

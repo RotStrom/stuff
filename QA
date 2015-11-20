@@ -1,0 +1,13 @@
+1. Which class would you use to store your birthday in years, months, days, seconds, and nanoseconds?
+A: LocalDateTime
+
+2. Given a random date, how would you find the date of the previous Thursday?
+A: With the TemporalAdjusters -> previous. See Q2.java.
+
+3. What is the difference between a ZoneId and a ZoneOffset?
+A: ZoneId - time zone identifier and rules (ZoneRules) for converting between Instant and LocalDateTime.
+   ZoneOffset - only time zone offset (absolute) from Greenwich/UTC time
+
+4. How would you convert an Instant to a ZonedDateTime? How would you convert a ZonedDateTime to an Instant?
+A: With atZone Method. With toInstant method. See Q3.java.
+

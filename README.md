@@ -16,3 +16,4 @@ at	    instance	    Combines this object with another.
 
 
 skipped: The Date-Time Classes (ZonedDateTime, OffsetDateTime, OffsetTime) - too boring
+todo: parsing input in exercises

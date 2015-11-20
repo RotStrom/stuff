@@ -1,4 +1,4 @@
-package com.github.rotstrom.date
+package com.github.rotstrom.datetime
 
 import java.time.format.TextStyle
 import java.time.temporal.TemporalAdjusters
