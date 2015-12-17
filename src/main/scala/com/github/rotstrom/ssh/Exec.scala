@@ -8,24 +8,28 @@ import net.schmizz.sshj.connection.channel.direct.Session
 
 object Exec {
   def main(args: Array[String]) {
-    val ssh = new SSHClient()
+    args.toList match {
+      case host :: login :: password :: Nil ⇒
+        val ssh = new SSHClient()
 
-    ssh.addHostKeyVerifier(new NullHostKeyVerifier())
-    ssh.connect("localhost")
+        ssh.addHostKeyVerifier(new NullHostKeyVerifier())
+        ssh.connect(host)
 
-    try {
-      ssh.authPassword("alex", "12345")
+        try {
+          ssh.authPassword(login, password)
 
-      val session = ssh.startSession()
-      try {
-        exec("whoami", session)
-        // another exec call to same session is not permitted
-        // exec("whoami", session)
-      } finally {
-        session.close()
-      }
-    } finally {
-      ssh.disconnect()
+          val session = ssh.startSession()
+          try {
+            exec("whoami", session)
+            // another exec call to same session is not permitted
+            // exec("whoami", session)
+          } finally {
+            session.close()
+          }
+        } finally {
+          ssh.disconnect()
+        }
+      case _ ⇒ println("usage: <host> <login> <password>")
     }
   }
 
