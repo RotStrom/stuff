@@ -1,4 +1,4 @@
-name := "dispatch"
+name := "dispatch-sample"
 
 version := "0.01"
 
